@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TalkingTurkishApi", "TalkingTurkishApi\TalkingTurkishApi.csproj", "{1D3C7474-5283-4639-A421-E24D755C1620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkingTurkishCore", "TalkingTurkishCore\TalkingTurkishCore.csproj", "{AB1C4A84-FACA-4CBC-9939-484367099E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkingTurkishEf", "TalkingTurkishEf\TalkingTurkishEf.csproj", "{DB91AEA8-83FF-441A-B6EA-731A849FA342}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D3C7474-5283-4639-A421-E24D755C1620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3C7474-5283-4639-A421-E24D755C1620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3C7474-5283-4639-A421-E24D755C1620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3C7474-5283-4639-A421-E24D755C1620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1C4A84-FACA-4CBC-9939-484367099E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1C4A84-FACA-4CBC-9939-484367099E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1C4A84-FACA-4CBC-9939-484367099E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1C4A84-FACA-4CBC-9939-484367099E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB91AEA8-83FF-441A-B6EA-731A849FA342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB91AEA8-83FF-441A-B6EA-731A849FA342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB91AEA8-83FF-441A-B6EA-731A849FA342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB91AEA8-83FF-441A-B6EA-731A849FA342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {713C03EC-8ED2-4D35-AFFD-DEE92BBFE67B}
+	EndGlobalSection
+EndGlobal
