@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace TalkingTurkishEf.Entities
 {
-    public class Thing
+    public class Thing:BaseEntity
     {
  
-        public Guid ThingId { get; set; }
 
         public string PictureName { get; set; }
 
@@ -18,7 +17,7 @@ namespace TalkingTurkishEf.Entities
 
         public override string ToString()
         {
-            return $"{nameof(ThingId)}: {ThingId}, {nameof(PictureName)}: {PictureName}, {nameof(Content)}: {Content}, {nameof(Text)}: {Text}";
+            return $"{nameof(Id)}: {Id}, {nameof(PictureName)}: {PictureName}, {nameof(Content)}: {Content}, {nameof(Text)}: {Text}";
         }
 
         private sealed class ThingEqualityComparer : IEqualityComparer<Thing>
@@ -29,14 +28,14 @@ namespace TalkingTurkishEf.Entities
                 if (ReferenceEquals(x, null)) return false;
                 if (ReferenceEquals(y, null)) return false;
                 if (x.GetType() != y.GetType()) return false;
-                return x.ThingId.Equals(y.ThingId) && string.Equals(x.PictureName, y.PictureName) && x.Content == y.Content && Equals(x.Voice, y.Voice) && string.Equals(x.Text, y.Text);
+                return x.Id.Equals(y.Id) && string.Equals(x.PictureName, y.PictureName) && x.Content == y.Content && Equals(x.Voice, y.Voice) && string.Equals(x.Text, y.Text);
             }
 
             public int GetHashCode(Thing obj)
             {
                 unchecked
                 {
-                    var hashCode = obj.ThingId.GetHashCode();
+                    var hashCode = obj.Id.GetHashCode();
                     hashCode = (hashCode * 397) ^ (obj.PictureName != null ? obj.PictureName.GetHashCode() : 0);
                     hashCode = (hashCode * 397) ^ obj.Content.GetHashCode();
                     hashCode = (hashCode * 397) ^ (obj.Voice != null ? obj.Voice.GetHashCode() : 0);
