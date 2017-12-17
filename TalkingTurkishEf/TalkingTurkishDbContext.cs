@@ -33,7 +33,7 @@ namespace TalkingTurkishEf
         public TalkingTurkishDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<TalkingTurkishDbContext>();
-            optionsBuilder.UseSqlite("Data Source=blog.db");
+            optionsBuilder.UseSqlite("Data Source=TalkingTurkish.db");
             return new TalkingTurkishDbContext(optionsBuilder.Options);
         }
     }

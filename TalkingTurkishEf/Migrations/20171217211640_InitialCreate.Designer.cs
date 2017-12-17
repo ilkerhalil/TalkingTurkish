@@ -11,8 +11,8 @@ using TalkingTurkishEf;
 namespace TalkingTurkishEf.Migrations
 {
     [DbContext(typeof(TalkingTurkishDbContext))]
-    [Migration("20171217173807_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20171217211640_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,21 +22,21 @@ namespace TalkingTurkishEf.Migrations
 
             modelBuilder.Entity("TalkingTurkishEf.Entities.Language", b =>
                 {
-                    b.Property<Guid>("LanguageId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Code");
 
                     b.Property<string>("Name");
 
-                    b.HasKey("LanguageId");
+                    b.HasKey("Id");
 
                     b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("TalkingTurkishEf.Entities.Thing", b =>
                 {
-                    b.Property<Guid>("ThingId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<byte[]>("Content");
@@ -47,7 +47,7 @@ namespace TalkingTurkishEf.Migrations
 
                     b.Property<Guid?>("VoiceId");
 
-                    b.HasKey("ThingId");
+                    b.HasKey("Id");
 
                     b.HasIndex("VoiceId");
 
@@ -56,16 +56,16 @@ namespace TalkingTurkishEf.Migrations
 
             modelBuilder.Entity("TalkingTurkishEf.Entities.Voice", b =>
                 {
-                    b.Property<Guid>("VoiceId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<byte[]>("Content");
 
-                    b.Property<Guid?>("LanguangeLanguageId");
+                    b.Property<Guid?>("LanguangeId");
 
-                    b.HasKey("VoiceId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("LanguangeLanguageId");
+                    b.HasIndex("LanguangeId");
 
                     b.ToTable("Voices");
                 });
@@ -81,7 +81,7 @@ namespace TalkingTurkishEf.Migrations
                 {
                     b.HasOne("TalkingTurkishEf.Entities.Language", "Languange")
                         .WithMany()
-                        .HasForeignKey("LanguangeLanguageId");
+                        .HasForeignKey("LanguangeId");
                 });
 #pragma warning restore 612, 618
         }

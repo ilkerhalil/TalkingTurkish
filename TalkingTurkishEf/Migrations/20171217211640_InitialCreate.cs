@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace TalkingTurkishEf.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,31 +12,31 @@ namespace TalkingTurkishEf.Migrations
                 name: "Languages",
                 columns: table => new
                 {
-                    LanguageId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Languages", x => x.LanguageId);
+                    table.PrimaryKey("PK_Languages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Voices",
                 columns: table => new
                 {
-                    VoiceId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Content = table.Column<byte[]>(nullable: true),
-                    LanguangeLanguageId = table.Column<Guid>(nullable: true)
+                    LanguangeId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Voices", x => x.VoiceId);
+                    table.PrimaryKey("PK_Voices", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Voices_Languages_LanguangeLanguageId",
-                        column: x => x.LanguangeLanguageId,
+                        name: "FK_Voices_Languages_LanguangeId",
+                        column: x => x.LanguangeId,
                         principalTable: "Languages",
-                        principalColumn: "LanguageId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -44,7 +44,7 @@ namespace TalkingTurkishEf.Migrations
                 name: "Things",
                 columns: table => new
                 {
-                    ThingId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Content = table.Column<byte[]>(nullable: true),
                     PictureName = table.Column<string>(nullable: true),
                     Text = table.Column<string>(nullable: true),
@@ -52,12 +52,12 @@ namespace TalkingTurkishEf.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Things", x => x.ThingId);
+                    table.PrimaryKey("PK_Things", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Things_Voices_VoiceId",
                         column: x => x.VoiceId,
                         principalTable: "Voices",
-                        principalColumn: "VoiceId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -67,9 +67,9 @@ namespace TalkingTurkishEf.Migrations
                 column: "VoiceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Voices_LanguangeLanguageId",
+                name: "IX_Voices_LanguangeId",
                 table: "Voices",
-                column: "LanguangeLanguageId");
+                column: "LanguangeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
