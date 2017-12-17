@@ -2,10 +2,9 @@
 
 namespace TalkingTurkishEf.Entities
 {
-    public class Voice
+    public class Voice:BaseEntity
     {
     
-        public Guid VoiceId { get; set; }
         public Language Languange { get; set; }
         public byte[] Content { get; set; }
     }
